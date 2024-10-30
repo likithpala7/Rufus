@@ -1,7 +1,7 @@
 # Rufus Agent
 
 ## Summary
-Rufus is an agent that is able to crawl webpages and provide relevant information given a prompt and a website. For example, if the instructions are to "Find information about product features and customer FAQs." and the website is "https://www.nike.com/". Rufus will crawl through the website and provide information about the products and customer FAQs in a structured manner. This is an early implementation (PoC) and has many improvements that can be made in terms of accuracy and efficiency.
+Rufus is an agent that is able to crawl webpages and provide relevant information given a prompt and a website. For example, if the instructions are to "Find information about product features and customer FAQs." and the website is https://www.nike.com/. Rufus will crawl through the website and provide information about the products and customer FAQs in a structured manner. This is an early implementation (PoC) and has many improvements that can be made in terms of accuracy and efficiency.
 
 ---
 
@@ -29,7 +29,7 @@ There were 2 main challenges I faced:
 
 
 ## Future Improvements
-I have a lot of improvements in mind. Most of the improvements would be in regards to prompt engineering the LLM to give better outputs. In order to scrape relevant links, I think a better approach would be to embed the title of the webpage and prompt, and do a similarity comparison between them, incorporating the instructions somehow.
+I have a lot of improvements in mind. Most of the improvements would be in regards to prompt engineering the LLM to give better outputs. In order to scrape relevant links, I think a better approach would be to embed the title of the webpage and prompt, and do a similarity comparison between them, incorporating the instructions somehow. Since this was done quickly, it is important to consider the model I used as well. I'm assuming GPT-4o would work much better than the Ollama - Llama3.2 model that I used. This was just for development purposes.
 
 ---
 
@@ -49,4 +49,4 @@ output = client.scrape(instructions, website)
 print(output)
 ```
 
-As you can see, the `RufusClient` object takes in the model and logging flag as parameters. The `scrape` function takes in `instructions, website, depth, crawl_strategy, max_concurrent_requests` as parameters. 
+As you can see, the `RufusClient` object takes in the `model` and `logging` flag as parameters. The `scrape` function takes in `instructions, website, depth, crawl_strategy, max_concurrent_requests` as parameters. 
